@@ -1,1 +1,3 @@
-This version of TicTacToe is one of my very first projects when learning javascript and DOM manipulation. 
+Work in progress
+
+1. create game board and display logic for X an Os on click. 
