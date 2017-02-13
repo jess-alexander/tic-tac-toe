@@ -1,0 +1,1 @@
+This version of TicTacToe is one of my very first projects when learning javascript and DOM manipulation. 
