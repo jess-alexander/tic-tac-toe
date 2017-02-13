@@ -43,3 +43,12 @@ div.row > div:nth-of-type(2) {
     font-size: -webkit-xxx-large;
     margin-top: 1em;
 }
+
+
+/*
+ * reset button to remove internal score and clear gameboard
+ */
+
+#reset {
+    margin-left: 45%;
+}
