@@ -2,34 +2,15 @@ h1 {
     text-align: center;
 }
 
-
-/*   
-// code game-board using a table 
-table {
-    float: right;
-    margin-right: 30%;
-}
-
-td {
-    width: 10em;
-    height: 10em;
-}
-
-td:nth-of-type(2) {
-    
-}
-
-tr:nth-of-type(2) td {
-    border-top-style: solid;
-    border-bottom-style: solid;
-}
-
-*/
-
 #board {
     overflow: hidden;
     text-align: center;
 }
+
+
+/*
+ * board creation (floats and borders)
+ */
 
 div.row {
     overflow: hidden;
@@ -51,4 +32,14 @@ div.row > div {
 div.row > div:nth-of-type(2) {
     border-top-style: solid;
     border-bottom-style: solid;
+}
+
+
+/*
+ * Xs and Os styling
+ */
+
+.item > h1 {
+    font-size: -webkit-xxx-large;
+    margin-top: 1em;
 }

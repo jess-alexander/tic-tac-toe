@@ -2,12 +2,14 @@
 //player false --> player2
 var player = true;
 
-$(".item").click(function() {
-    if (player) {
-        $(this).text("X");
-    } else {
-        $(this).text("O");
+$("div.item").click(function() {
+    if (!$(this).text().trim().length) {
+        if (player) {
+            $(this).html("<h1>X</h1>");
+        } else {
+            $(this).html("<h1>O</h1>");
+        }
+        player = !player;
     }
-    player = !player;
 
 });
