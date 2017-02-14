@@ -17,6 +17,7 @@ var board = [ //init with large un-equal numbers   (not 1 or 2)
 /////////       CLICK-LISTENER         /////////     
 ////////////////////////////////////////////////
 
+// reset board
 $("#reset").click(function() {
     board = [ //init with large un-equal numbers   (not 1 or 2) 
         [10, 20, 30],
@@ -27,11 +28,12 @@ $("#reset").click(function() {
 
 });
 
+// set an X or an O
 $("div.item").click(function() {
     // don't continue logic if the div clicked contains something
-    if (!$(this).text().trim().length) {
-        if (player) {
-            $(this).html("<h1 class='mark'>X</h1>");
+    if (!$(this).text().trim().length) { //use keyword 'this' to only modify div clicked
+        if (player) { // true --> player 1 --> X
+            $(this).html("<h1 class='mark'>X</h1>"); //X isn't placed until click function processes are complete.
         } else {
             $(this).html("<h1 class='mark'>O</h1>");
         }
@@ -109,17 +111,17 @@ function checkPlayer() {
 }
 
 function checkForWin() {
-    // there's a problem here, only X is declared the winner.
-    if ((board[0][0] == board[0][1] == board[0][2]) ||
-        (board[1][0] == board[1][1] == board[1][2]) ||
-        (board[2][0] == board[2][1] == board[2][2]) ||
+    // if the same player's number is in all three positions there's a winner.
+    if ((board[0][0] == board[0][1] && board[0][1] == board[0][2]) || // 2 == 2 && 2 == 2
+        (board[1][0] == board[1][1] && board[1][1] == board[1][2]) || // 1 == 1 && 1 == 1
+        (board[2][0] == board[2][1] && board[2][1] == board[2][2]) ||
         // ^ horizontal line wins
-        (board[0][0] == board[1][0] == board[2][0]) ||
-        (board[0][1] == board[1][1] == board[2][1]) ||
-        (board[0][2] == board[1][2] == board[2][2]) ||
+        (board[0][0] == board[1][0] && board[1][0] == board[2][0]) ||
+        (board[0][1] == board[1][1] && board[1][1] == board[2][1]) ||
+        (board[0][2] == board[1][2] && board[1][2] == board[2][2]) ||
         // ^ verical line wins
-        (board[0][0] == board[1][1] == board[2][2]) ||
-        (board[0][2] == board[1][1] == board[2][0])) {
+        (board[0][0] == board[1][1] && board[1][1] == board[2][2]) ||
+        (board[0][2] == board[1][1] && board[1][1] == board[2][0])) {
         // ^ diagonal line wins
         return true; //winner winner!
     } else {
